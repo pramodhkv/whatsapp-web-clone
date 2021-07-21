@@ -1,0 +1,312 @@
+*:root {
+  --app-background-color: #dadbd3;
+  --app-body-background-color: #dadbd3;
+  --shadow-dark: -1px 4px 20px -6px rgba(0, 0, 0, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+.app {
+  background-color: var(--app-background-color);
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app__body {
+  background-color: var(--app-body-background-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90vw;
+  height: 90vh;
+  -webkit-box-shadow: var(--shadow-dark);
+          box-shadow: var(--shadow-dark);
+}
+
+.search__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 4rem;
+  margin-left: 0.5rem;
+}
+
+.search__container > .MuiSvgIcon-root {
+  z-index: 2;
+  color: gray;
+}
+
+.search__container > input {
+  border: none;
+  width: 90%;
+  height: 2.2rem;
+  padding: 0.5rem 3rem;
+  border-radius: 2rem;
+  margin-left: -2.5rem;
+  font-family: inherit;
+}
+
+.search__container > input:focus {
+  outline: none;
+}
+
+.sidebar {
+  -webkit-box-flex: 0.35;
+      -ms-flex: 0.35;
+          flex: 0.35;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-right: 1px solid lightgray;
+}
+
+.sidebar__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid lightgray;
+}
+
+.sidebar__header__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 8vw;
+}
+
+.sidebar__header__right > .MuiIconButton-root {
+  color: gray;
+}
+
+.sidebar__search {
+  border: 1px solid lightgray;
+}
+
+.sidebar__chats {
+  background-color: #fff;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: hidden;
+}
+
+.sidebar__chats__chat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  border: 1px solid #f6f6f6;
+}
+
+.sidebar__chats__chat:hover {
+  background-color: #ebebeb;
+}
+
+.sidebar__chats__chat__info {
+  margin-left: 1.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.sidebar__chats__chat__info > h2 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar__addNewChat {
+  height: 4.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar__addNewChat__add-new-room-btn {
+  background-image: -webkit-gradient(linear, left top, right top, from(#02aab0), color-stop(51%, #00cdac), to(#02aab0));
+  background-image: linear-gradient(to right, #02aab0 0%, #00cdac 51%, #02aab0 100%);
+  width: 60%;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  -webkit-box-shadow: 0 0 20px #eee;
+          box-shadow: 0 0 20px #eee;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: block;
+  border: none;
+}
+
+.sidebar__addNewChat__add-new-room-btn:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.chats {
+  -webkit-box-flex: 0.65;
+      -ms-flex: 0.65;
+          flex: 0.65;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.chats__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid lightgray;
+}
+
+.chats__header__info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 2rem;
+}
+
+.chats__header__info > h2 {
+  margin-bottom: 0.3rem;
+}
+
+.chats__header__info > p {
+  color: gray;
+}
+
+.chats__header__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 8vw;
+}
+
+.chats__header__right > .MuiIconButton-root {
+  color: gray;
+}
+
+.chats__body {
+  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-repeat: repeat;
+  background-position: center;
+  overflow: scroll;
+  padding: 2.25rem;
+}
+
+.chats__body__message {
+  background-color: #fff;
+  position: relative;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 2.5rem;
+}
+
+.chats__body__username {
+  position: absolute;
+  top: -15px;
+  font-size: small;
+  font-weight: 800;
+}
+
+.chats__footer {
+  height: 4.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.chats__footer > .MuiIconButton-root {
+  margin-right: 0.5rem;
+  color: gray;
+}
+
+.receiver {
+  background-color: lightgreen;
+}
+
+.MuiButton-textPrimary {
+  color: #02aab0 !important;
+}
+
+.MuiInput-underline:after {
+  border-bottom: 2px solid #02aab0 !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: #02aab0 !important;
+}
+/*# sourceMappingURL=main.css.map */

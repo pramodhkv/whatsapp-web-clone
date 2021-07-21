@@ -1,8 +1,17 @@
-import './App.css';
+import React from "react";
+
+import "./styles/main.css";
+import Sidebar from "./components/Sidebar";
+import Chats from "./components/Chats";
 
 function App() {
   return (
-    <div>Hello Whatsapp web</div>
+    <div className="app">
+      <div className="app__body">
+        <Sidebar />
+        <Chats />
+      </div>
+    </div>
   );
 }
 
