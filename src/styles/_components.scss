@@ -96,7 +96,7 @@
 //End - Left sidebar section..
 
 //Start - Right side chat section..
-.chats {
+.chat {
   flex: 0.65;
   flex-direction: column;
   display: flex;
@@ -159,22 +159,48 @@
       font-size: small;
       font-weight: 800;
     }
+
+    &__timestamp {
+      margin-left: 1rem;
+      font-size: x-small;
+    }
   }
 
   &__footer {
     height: 4.5rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     & > .MuiIconButton-root {
       margin-right: 0.5rem;
       color: gray;
     }
+
+    & > form {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    & > form > input {
+      border: none;
+      width: 90%;
+      height: 2.2rem;
+      padding: 0.5rem 3rem;
+      border-radius: 2rem;
+      font-family: inherit;
+
+      &:focus {
+        outline: none;
+      }
+    }
   }
 }
 
 .receiver {
-  background-color: lightgreen;
+  background-color: #dcf8c6;
+  margin-left: auto;
 }
 
 //End - Right side chat section..
