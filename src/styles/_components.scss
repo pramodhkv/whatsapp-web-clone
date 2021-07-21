@@ -1,6 +1,5 @@
 //Start - Left sidebar section..
 .sidebar {
-  //background-color: red;
   flex: 0.35;
   flex-direction: column;
   display: flex;
@@ -9,7 +8,6 @@
   &__header {
     display: flex;
     justify-content: space-between;
-    //padding: 1rem;
     border: 1px solid lightgray;
 
     &__right {
@@ -19,7 +17,6 @@
       min-width: 8vw;
 
       & > .MuiIconButton-root {
-        //font-size: 2.4rem !important;
         color: gray;
       }
     }
@@ -76,7 +73,7 @@
     &__add-new-room-btn {
       @include buttonCls();
       &:hover {
-        background-position: right center; /* change the direction of the change here */
+        background-position: right center;
         color: #fff;
         text-decoration: none;
       }
@@ -94,8 +91,6 @@
   &__header {
     display: flex;
     align-items: center;
-
-    //padding: 1rem;
     border: 1px solid lightgray;
 
     &__info {
@@ -103,8 +98,6 @@
       margin-left: 2rem;
 
       & > h2 {
-        //font-size: 1rem;
-
         margin-bottom: 0.3rem;
       }
 
@@ -245,7 +238,7 @@
 
       @include buttonCls();
       &:hover {
-        background-position: right center; /* change the direction of the change here */
+        background-position: right center;
         color: #fff;
         text-decoration: none;
       }
