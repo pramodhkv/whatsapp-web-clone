@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Avatar, IconButton } from "@material-ui/core";
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 import ChatIcon from "@material-ui/icons/Chat";
@@ -7,9 +7,12 @@ import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import SidebarChat from "./SidebarChat";
 import CreateRoomDialog from "./CreateRoomDialog";
 import db from "../shared/firebase";
+import { UserContext } from "../shared/userContext";
 
 export default function Sidebar() {
   const [rooms, setRooms] = useState([]);
+  const [user] = useContext(UserContext);
+  const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     const unsubscribe = db.collection("rooms").onSnapshot(snapshot => {
@@ -29,7 +32,6 @@ export default function Sidebar() {
   }, []);
 
   const onCreateNewRoom = roomName => {
-    console.log("final roomName", roomName);
     roomName &&
       db.collection("rooms").add({
         name: roomName
@@ -39,7 +41,7 @@ export default function Sidebar() {
     <div className="sidebar">
       <div className="sidebar__header">
         <IconButton>
-          <Avatar />
+          <Avatar src={`${user.photoURL}`} />
         </IconButton>
 
         <div className="sidebar__header__right">
