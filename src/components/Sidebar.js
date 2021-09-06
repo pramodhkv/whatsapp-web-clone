@@ -8,6 +8,7 @@ import SidebarChat from "./SidebarChat";
 import CreateRoomDialog from "./CreateRoomDialog";
 import db from "../shared/firebase";
 import { UserContext } from "../shared/userContext";
+import firebase from "firebase";
 
 export default function Sidebar() {
   const [rooms, setRooms] = useState([]);
@@ -15,28 +16,33 @@ export default function Sidebar() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    const unsubscribe = db.collection("rooms").onSnapshot(snapshot => {
-      setRooms(
-        snapshot.docs.map(doc => {
-          return {
-            id: doc.id,
-            data: doc.data()
-          };
-        })
-      );
-    });
+    const unsubscribe = db
+      .collection("rooms")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) => {
+        setRooms(
+          snapshot.docs.map((doc) => {
+            return {
+              id: doc.id,
+              data: doc.data(),
+            };
+          })
+        );
+      });
 
     return () => {
       unsubscribe();
     };
   }, []);
 
-  const onCreateNewRoom = roomName => {
+  const onCreateNewRoom = (roomName) => {
     roomName &&
       db.collection("rooms").add({
-        name: roomName
+        name: roomName,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       });
   };
+
   return (
     <div className="sidebar">
       <div className="sidebar__header">
@@ -63,13 +69,13 @@ export default function Sidebar() {
         </div>
       </div>
       <div className="sidebar__chats">
-        {rooms.map(room => {
+        {rooms.map((room) => {
           return <SidebarChat room={room} key={room.id} />;
         })}
       </div>
 
       <div className="sidebar__addNewChat">
-        <CreateRoomDialog onCreateNewRoom={e => onCreateNewRoom(e)} />
+        <CreateRoomDialog onCreateNewRoom={(e) => onCreateNewRoom(e)} />
       </div>
     </div>
   );
