@@ -8,7 +8,7 @@ import SidebarChat from "./SidebarChat";
 import CreateRoomDialog from "./CreateRoomDialog";
 import db from "../shared/firebase";
 import { UserContext } from "../shared/userContext";
-import firebase from "firebase";
+import firebase from "firebase/app";
 
 export default function Sidebar() {
   const [rooms, setRooms] = useState([]);
